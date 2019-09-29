@@ -198,11 +198,11 @@ DDoc.prototype._addRow=function(width,style,cols){
                     '<w:tcPr>' +
                         '<w:tcW w:w="'+gridSpanCount*width+'"/>' +
                         '<w:gridSpan w:val="'+gridSpanCount+'"/>' +
-                        (cols[i]===this.Merge.RC?'<w:vMerge/>':'<w:vMerge w:val="restart"/>')+
+                        (cols[i] === this.Merge.RC ? '<w:vMerge w:val="continue"/>' : '<w:vMerge w:val="restart"/>');
                     '</w:tcPr>' +
                     '<w:p>' +
                         '<w:r>' + style +
-                            '<w:t>'+cols[i]+'</w:t>' +
+                        (cols[i] === this.Merge.RC?'':'<w:t>' + cols[i] + '</w:t>')+
                         '</w:r>' +
                     '</w:p>' +
                 '</w:tc>';
